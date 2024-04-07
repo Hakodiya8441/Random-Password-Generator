@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Random Password Generator </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Generate a <br> <span> Random Password </span></h1>
+        <div class="display">
+            <input type="text"  id="password" placeholder="Password">
+            <img src="/media/copy.png" alt="" id="copy_password" onclick="copyPass()">
+        </div>
+        <button onclick="randomId(8)"><img src="/media/generate.png" > Generate Password</button>
+    </div>
+
+
+
+
+
+
+
+    <script>
+
+
+const passwordBox = document.getElementById("password");
+
+const words = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789"
+
+        function randomId(length){
+            let RandomId =""
+
+    for(let i = 1; i<=length; i++){
+        let Rnum = Math.floor(Math.random()*words.length)
+        
+        let allNum =  words.charAt(Rnum)
+        RandomId += allNum
+        console.log(allNum)
+    }
+    passwordBox.value = RandomId;
+    return RandomId
+    
+    
+}
+
+function copyPass(){
+    let pass = document.getElementById('password').value
+    
+
+    navigator.clipboard.writeText(pass)
+
+}
+
+console.log(window)
+                                                                                                                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
